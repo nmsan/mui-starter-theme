@@ -1,34 +1,82 @@
-import WdButton from "@/Theme/WdButton/WdButton";
+import WdButton from "@/theme/WdButton/WdButton";
 import * as React from "react";
-import WdIconButton from "@/Theme/WdIconButton";
+import WdIconButton from "@/theme/WdIconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import WdMenu from "@/Theme/WdMenu";
-import WdMenuItem from "@/Theme/WdMenu/WdMenuItem";
-import WdTypography from "@/Theme/WdTypography";
-import WdBox from "@/Theme/WdBox";
+import WdMenu from "@/theme/WdMenu";
+import WdMenuItem from "@/theme/WdMenu/WdMenuItem";
+import WdTypography from "@/theme/WdTypography";
+import {KeyboardArrowDown} from "@mui/icons-material";
+import {useRouter} from "next/navigation";
 
-export default function SiteMenu({hamberger}) {
+export default function SiteMenu({hamburger}) {
+    const router = useRouter();
     const pages = ['Auth'];
-
+    const tree = [{
+        page: "Auth", children: [{page: "Login", route: "login"}, {page: "Register", route: "register"}]
+    }, {
+        page: "Form Elements"
+    }]
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
     const handleCloseNavMenu = () => {
+        console.log("close")
         setAnchorElNav(null);
     };
+    const onMenuSelect = route => {
+        console.log("router", route)
+        handleCloseNavMenu();
+        router.push(route);
+    }
     const webMenu = () => {
-        {
-            pages.map((page) => (
-                <WdButton
-                    key={page}
-                    onClick={handleCloseNavMenu}
-                    sx={{my: 2, color: 'inherit', display: 'block'}}
+        return <span>{tree.map(({page, children, route}) => {
+            if (children) {
+
+                return <>
+                    <WdButton
+                        sx={{color: '#000'}}
+                        key={route}
+                        id="basic-button"
+                        aria-controls={anchorElNav ? 'basic-menu' : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={anchorElNav ? 'true' : undefined}
+                        endIcon={<KeyboardArrowDown/>}
+                        onMouseEnter={handleOpenNavMenu}
+                        // onMouseLeave={handleCloseNavMenu}
+                    >
+                        {page}
+                    </WdButton>
+                    <WdMenu id="menu-appbar"
+                            anchorEl={anchorElNav}
+                            anchorOrigin={{
+                                vertical: 'bottom', horizontal: 'left',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top', horizontal: 'left',
+                            }}
+                            open={Boolean(anchorElNav)}
+                            onClose={handleCloseNavMenu}>
+                        {children.map((p) => (<WdMenuItem key={p.page} onClick={() => onMenuSelect(p.route)}>
+                            <WdTypography sx={{textAlign: 'center'}}>{p.page}</WdTypography>
+                        </WdMenuItem>))}
+                    </WdMenu>
+                </>
+            } else {
+                return <WdButton
+                    sx={{color: '#000'}}
+                    key={route}
+                    id="basic-button"
+                    aria-controls={anchorElNav ? 'basic-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={anchorElNav ? 'true' : undefined}
+                    onClick={() => onMenuSelect(route)}
                 >
                     {page}
                 </WdButton>
-            ))
-        }
+            }
+        })}</span>
     }
     const mobileMenu = () => {
         return <><WdIconButton
@@ -45,24 +93,21 @@ export default function SiteMenu({hamberger}) {
                 id="menu-appbar"
                 anchorEl={anchorElNav}
                 anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'left',
+                    vertical: 'bottom', horizontal: 'left',
                 }}
                 keepMounted
                 transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'left',
+                    vertical: 'top', horizontal: 'left',
                 }}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{display: {xs: 'block', md: 'none'}}}
             >
-                {pages.map((page) => (
-                    <WdMenuItem key={page} onClick={handleCloseNavMenu}>
-                        <WdTypography sx={{textAlign: 'center'}}>{page}</WdTypography>
-                    </WdMenuItem>
-                ))}
-            </WdMenu></>
+                {pages.map((page) => (<WdMenuItem key={page} onClick={handleCloseNavMenu}>
+                    <WdTypography sx={{textAlign: 'center'}}>{page}</WdTypography>
+                </WdMenuItem>))}
+            </WdMenu>
+        </>
     }
-    return <>{hamberger ? webMenu() : mobileMenu()}</>
+    return <>{!hamburger ? webMenu() : mobileMenu()}</>
 }

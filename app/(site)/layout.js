@@ -1,7 +1,7 @@
 'use client'
 import * as React from 'react';
 import Header from "@/components/Header";
-import WdBox from "@/Theme/WdBox";
+import WdBox from "@/theme/WdBox";
 
 function SiteLayout({children}) {
 
