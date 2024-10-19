@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
-import "./globals.css";
+import globalStyle  from "./globals.module.css";
+import {ThemeProvider} from "@mui/material";
+import {theme} from "@/theme";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,9 +22,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+    <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com"/>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+      <link href="https://fonts.googleapis.com/css2?family=Montez&display=swap" rel="stylesheet"/>
+      <title>WD Theme Starer</title>
+    </head>
+    <ThemeProvider theme={theme}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      {children}
       </body>
+    </ThemeProvider>
     </html>
   );
 }

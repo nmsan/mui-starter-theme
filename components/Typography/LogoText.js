@@ -1,20 +1,20 @@
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import WdTypography from "@/theme/WdTypography";
+import {purple} from "@mui/material/colors";
 
-export default function LogoText({text, href, sx}) {
+export default function LogoText({text, href, sx, align}) {
     return <WdTypography
-        variant="h6"
+        align={align || "left"}
+        variant="h3"
         noWrap
         component="a"
         href={href||"#"}
+        color={"primary"}
         sx={{
             mr: 2,
-            fontFamily: 'monospace',
-            fontWeight: 700,
-            letterSpacing: '.3rem',
-            color: 'inherit',
             textDecoration: 'none',
+            fontFamily: "Montez",
             ...sx
         }}
     >

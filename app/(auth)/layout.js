@@ -1,7 +1,11 @@
 import {Box, Container, Grid2, Paper, Stack, Typography} from "@mui/material";
 import Image from "next/image";
-import authImage from "@/resources/images/login-image.jpg";
+import img from "@/resources/images/img.png";
 import style from "./layout.module.css";
+import LogoText from "@/components/Typography/LogoText";
+import WdContainer from "@/theme/WdContainer";
+import Paragraph from "@/components/Typography/Paragraph";
+
 export default function AuthLayout({children}) {
 
     return <Stack
@@ -16,16 +20,21 @@ export default function AuthLayout({children}) {
     >
         <Box width="50%">
             <Image
-                src={authImage}
+                src={img}
                 alt="auth image"
-                style={{ width: '100%', height: 'auto' }}
+                style={{width: '100%', height: 'auto'}}
             />
         </Box>
         <Box width={"50%"}>
-            <div className={style.title}>
-                <h1 className={style.title}>Wedding Dreams</h1>
+            <div className={style.title} style={{paddingBottom: "80px"}}>
+                <LogoText className={style.title} text={"Wedding Dreams"} sx={{textAlign: "center"}}></LogoText>
             </div>
-            {children}
+            <WdContainer sx={{padding: "40px"}}>
+                {children}
+            </WdContainer>
+            <div className={style.footer}>
+                <Paragraph>© Wedding Dreams (pvt) ltd. All Right Reserved</Paragraph>
+            </div>
         </Box>
     </Stack>
 }
