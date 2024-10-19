@@ -1,0 +1,9 @@
+.pt_20 {
+    padding-top: 20px;
+}
+html *
+{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}

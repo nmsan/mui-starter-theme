@@ -1,7 +1,6 @@
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import WdTypography from "@/theme/WdTypography";
-import {purple} from "@mui/material/colors";
 
 export default function LogoText({text, href, sx, align}) {
     return <WdTypography

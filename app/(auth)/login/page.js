@@ -13,18 +13,18 @@ export default function Login() {
     return <WdContainer maxWidth="sm">
             <SubTitle className={style.title}>Login</SubTitle>
             <WdInputContainer>
-                <WdTextField placeholder={"Email Address"}></WdTextField>
+                <WdTextField placeholder={"EMAIL ADDRESS"}></WdTextField>
             </WdInputContainer>
             <WdInputContainer>
-                <WdTextField placeholder={"Password"}></WdTextField>
+                <WdTextField placeholder={"PASSWORD"}></WdTextField>
             </WdInputContainer>
-            <WdButton type={"text"} ><b>FORGET PASSWORD?</b></WdButton>
+            <WdButton type={"text"}><span style={{fontWeight: 600}}>FORGET PASSWORD?</span></WdButton>
             <div className={style.title}>
-                <WdButton variant="contained">LOGIN</WdButton>
+                <WdButton variant="contained" sx={{padding: "8px 70px"}}>LOGIN</WdButton>
             </div>
             <div className={`${style.title} ${globalStyle.pt_20}`}  >
                 <Paragraph>{"Don't you have account yet?"} </Paragraph>
-                <WdLink link={"#"} text={"REGISTER NOW"}/>
+                <WdLink link={"#"} text={"REGISTER NOW"} sx={{paddingLeft: "0px"}}/>
             </div>
         </WdContainer>
     {/*</WdGrid>*/}
