@@ -1,14 +1,15 @@
-import {Box, Container, Grid2, Paper, Stack, Typography} from "@mui/material";
 import Image from "next/image";
-import img from "@/resources/images/img.png";
-import style from "./layout.module.css";
+import img from "@/resources/images/young-bride-groom-casual-formal-wedding-dress.jpg";
+import style from "./auth.module.css";
 import LogoText from "@/components/Typography/LogoText";
 import WdContainer from "@/theme/WdContainer";
-import Paragraph from "@/components/Typography/Paragraph";
+import P from "@/components/Typography/P";
+import WdBox from "@/theme/WdBox";
+import WdStack from "@/theme/WdStack";
 
 export default function AuthLayout({children}) {
 
-    return <Stack
+    return <WdStack
         direction="row" spacing={1}
         sx={[
             {
@@ -18,14 +19,14 @@ export default function AuthLayout({children}) {
 
         ]}
     >
-        <Box width="50%">
+        <WdBox width="50%">
             <Image
                 src={img}
                 alt="auth image"
                 style={{width: '100%', height: 'auto'}}
             />
-        </Box>
-        <Box width={"50%"}>
+        </WdBox>
+        <WdBox width={"50%"} sx={{position: "relative"}}>
             <div className={style.title} style={{paddingBottom: "80px"}}>
                 <LogoText className={style.title} text={"Wedding Dreams"} sx={{textAlign: "center"}}></LogoText>
             </div>
@@ -33,8 +34,8 @@ export default function AuthLayout({children}) {
                 {children}
             </WdContainer>
             <div className={style.footer}>
-                <Paragraph>© Wedding Dreams (pvt) ltd. All Right Reserved</Paragraph>
+                <P>© Wedding Dreams (pvt) ltd. All Right Reserved</P>
             </div>
-        </Box>
-    </Stack>
+        </WdBox>
+    </WdStack>
 }

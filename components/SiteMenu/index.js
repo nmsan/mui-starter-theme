@@ -35,6 +35,7 @@ export default function SiteMenu({hamburger}) {
 
                 return <>
                     <WdButton
+                        variant={"text"}
                         sx={{color: '#000'}}
                         key={route}
                         id="basic-button"
@@ -65,6 +66,7 @@ export default function SiteMenu({hamburger}) {
                 </>
             } else {
                 return <WdButton
+                    variant={"text"}
                     sx={{color: '#000'}}
                     key={route}
                     id="basic-button"

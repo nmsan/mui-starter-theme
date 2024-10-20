@@ -1,0 +1,33 @@
+.title {
+    text-align: center;
+    margin-top: 20px;
+}
+.footer {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+.title {
+    text-align: center;
+}
+.inputContainer {
+    padding: 8px 0px;
+}
+.userTypeIconContainer {
+    display: flex;
+    justify-content: center;
+    border: .1em solid purple;
+    padding: 50px;
+    margin-bottom: 10px;
+}
+.verifiedIcon {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    margin-bottom: 10px;
+}
+.buttonContainer {
+    margin-top: 20px;
+    text-align: center;
+}
