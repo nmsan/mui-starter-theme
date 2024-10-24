@@ -1,9 +1,7 @@
-import Typography from "@mui/material/Typography";
 import * as React from "react";
-import WdTypography from "@/theme/WdTypography";
-import {grey} from "@mui/material/colors";
+import WdTypography from "@/theme/WdTypography/index";
 
-export default function P(props) {
+export default function WdPText(props) {
     return <WdTypography
         primary
         variant="p"

@@ -1,6 +1,6 @@
-import WdTypography from "@/theme/WdTypography";
+import WdTypography from "@/theme/WdTypography/index";
 
-export default function SubTitle(props) {
+export default function WdSubTitle(props) {
     return <WdTypography variant={"h4"}
                          color={"primary"}
                          sx={{textTransform: "uppercase", fontWeight: 800}}

@@ -1,9 +1,9 @@
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import WdTypography from "@/theme/WdTypography";
+import WdTypography from "@/theme/WdTypography/index";
 
-export default function LogoText({text, href, sx, align}) {
-    return <WdTypography
+export default function WdLogoText({text, href, sx, align}) {
+    return <Typography
         align={align || "left"}
         variant="h3"
         noWrap
@@ -18,5 +18,5 @@ export default function LogoText({text, href, sx, align}) {
         }}
     >
         {text}
-    </WdTypography>
+    </Typography>
 }

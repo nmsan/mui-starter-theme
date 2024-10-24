@@ -1,14 +1,14 @@
 'use client'
-import SubTitle from "@/components/Typography/SubTitle";
+import WdSubTitle from "@/theme/WdTypography/WdSubTitle";
 import style from "../../../auth.module.css";
 import globalStyle from "../../../../globals.module.css";
 import WdTextField from "@/theme/WdTextField";
-import WdInputContainer from "@/theme/WdInputContainer";
 import WdButton from "@/theme/WdButton/WdButton";
-import P from "@/components/Typography/P";
+import WdPText from "@/theme/WdTypography/WdPText";
 import WdLink from "@/theme/WdLink";
-import WdContainer from "@/theme/WdContainer";
 import {useRouter} from "next/navigation";
+import WdContainer from "@/theme/WdContainer";
+import WdInputContainer from "@/theme/WdInputContainer";
 
 export default function Form({params}) {
 
@@ -19,7 +19,7 @@ export default function Form({params}) {
     }
     return <>
         <WdContainer maxWidth="sm">
-            <SubTitle className={style.title}>Register Form </SubTitle>
+            <WdSubTitle className={style.title}>Register Form </WdSubTitle>
             <WdInputContainer>
                 <WdTextField placeholder={"NAME"}></WdTextField>
             </WdInputContainer>
@@ -36,7 +36,7 @@ export default function Form({params}) {
                 <WdButton variant="contained" sx={{padding: "8px 70px"}} onClick={submit}>Submit</WdButton>
             </div>
             <div className={`${style.title} ${globalStyle.pt_20}`}>
-                <P>{"Already Have a Account?"} </P>
+                <WdPText>{"Already Have a Account?"} </WdPText>
                 <WdLink link={"/login"} text={"LOGIN NOW"} sx={{paddingLeft: "0px"}}/>
             </div>
         </WdContainer>

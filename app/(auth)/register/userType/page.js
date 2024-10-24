@@ -1,14 +1,14 @@
 'use client'
-import SubTitle from "@/components/Typography/SubTitle";
+import WdSubTitle from "@/theme/WdTypography/WdSubTitle";
 import style from "../../auth.module.css"
 import globalStyle from "../../../globals.module.css";
 import WdContainer from "@/theme/WdContainer";
 import WdGrid from "@/theme/WdGrid";
 import {VolunteerActivismTwoTone, Wc, WcTwoTone} from "@mui/icons-material";
 import WdIconButton from "@/theme/WdIconButton";
-import P from "@/components/Typography/P";
+import WdPText from "@/theme/WdTypography/WdPText";
 import {useState} from "react";
-import TypeWriter from "@/components/Typography/TypeWriter";
+import WdTypeWriter from "@/theme/WdTypography/WdTypeWriter";
 import WdButton from "@/theme/WdButton/WdButton";
 import {useRouter} from "next/navigation";
 
@@ -25,9 +25,9 @@ export default function Register() {
     }
     return <>
         <WdContainer maxWidth="sm">
-            <SubTitle className={style.title}>{"I'm"} </SubTitle>
+            <WdSubTitle className={style.title}>{"I'm"} </WdSubTitle>
             <div className={globalStyle.center}>
-                <P><TypeWriter text={options[index]} delay={50}></TypeWriter></P>
+                <WdPText><WdTypeWriter text={options[index]} delay={50}></WdTypeWriter></WdPText>
             </div>
             <WdGrid container spacing={8} sx={{marginTop: "40px", marginBottom: "40px"}}>
                 <WdGrid size={6}>
@@ -35,14 +35,14 @@ export default function Register() {
                         <WdIconButton onClick={() => change(0)}><VolunteerActivismTwoTone
                             sx={{fontSize: "120px"}}/></WdIconButton>
                     </div>
-                    <div className={globalStyle.center}><P>{options[0]}</P></div>
+                    <div className={globalStyle.center}><WdPText>{options[0]}</WdPText></div>
 
                 </WdGrid>
                 <WdGrid size={6}>
                     <div className={style.userTypeIconContainer}>
                         <WdIconButton onClick={() => change(1)}><WcTwoTone sx={{fontSize: "120px"}}/></WdIconButton>
                     </div>
-                    <div className={globalStyle.center}><P>{options[1]}</P></div>
+                    <div className={globalStyle.center}><WdPText>{options[1]}</WdPText></div>
                 </WdGrid>
             </WdGrid>
             <div className={globalStyle.center}>

@@ -35,6 +35,7 @@ export default function SiteMenu({hamburger}) {
 
                 return <>
                     <WdButton
+                        size={"large"}
                         variant={"text"}
                         sx={{color: '#000'}}
                         key={route}

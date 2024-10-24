@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-export default function TypeWriter({text="", delay}) {
+export default function WdTypeWriter({text="", delay}) {
     const [currentText, setCurrentText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
 
