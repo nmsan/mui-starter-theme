@@ -1,12 +1,14 @@
+'use client'
 import WdToolbar from "@/theme/WdToolbar";
 import WdIconButton from "@/theme/WdIconButton";
-import WdAvatar from "@/theme/WdAvatar";
 import WdMenu from "@/theme/WdMenu";
 import WdMenuItem from "@/theme/WdMenu/WdMenuItem";
 import WdTypography from "@/theme/WdTypography";
 import * as React from "react";
 import {useRouter} from "next/navigation";
-
+import Image from "next/image";
+import avatar from "@/resources/images/avatar.png"
+import style from "./profileOption.module.css";
 
 const settings = [
     {route: 'account', text:'Account'},
@@ -32,7 +34,7 @@ const ProfileOption = () => {
     return <>
         <WdToolbar title="Open settings">
             <WdIconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
-                <WdAvatar alt="Remy Sharp" src="/static/images/avatar/2.jpg"/>
+                <Image src={avatar} alt={"avatar"} width={40} className={style.avatar}/>
             </WdIconButton>
         </WdToolbar>
         <WdMenu

@@ -4,11 +4,6 @@ import WdContainer from "@/theme/WdContainer";
 import WdToolbar from "@/theme/WdToolbar";
 import WdLogoText from "@/theme/WdTypography/WdLogoText";
 import WdBox from "@/theme/WdBox";
-import WdIconButton from "@/theme/WdIconButton";
-import WdMenu from "@/theme/WdMenu";
-import WdMenuItem from "@/theme/WdMenu/WdMenuItem";
-import WdAvatar from "@/theme/WdAvatar";
-import WdTypography from "@/theme/WdTypography";
 import SiteMenu from "@/components/SiteMenu";
 
 import style from "./header.module.css";
