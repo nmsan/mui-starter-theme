@@ -1,14 +1,15 @@
+'use client'
 import BusinessList from "@/components/Business/BusinessList";
 import PortalHeader from "@/components/PortalHeader";
 import PortalActionBar from "@/components/PortalActionBar";
-import WdButton from "@/theme/WdButton/WdButton";
+import BusinessCreateButton from "../../../components/Business/BusinessCreateButton";
 
 const Business = props => {
 
     return <>
         <PortalHeader title="My Busicesses"/>
         <PortalActionBar>
-            <WdButton>New</WdButton>
+            <BusinessCreateButton/>
         </PortalActionBar>
         <BusinessList/>
     </>

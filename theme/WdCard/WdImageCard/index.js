@@ -2,38 +2,35 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import Image from "next/image";
-import Divider from "@mui/material/Divider";
 import {CardActionArea} from "@mui/material";
+import PropTypes from "prop-types";
+import {Delete, Edit} from "@mui/icons-material";
+import WdIconButton from "@/theme/WdIconButton";
+import WdDivider from "@/theme/WdDivider";
 
-export default function WdImageCard({image, title, description}) {
+const WdImageCard = ({image, title}) =>  {
     return (
-        <Card sx={{maxWidth: 345}} variant="outlined">
+        <Card variant="outlined">
             <CardActionArea>
                 <Typography gutterBottom variant="h5" component="div" align={"center"}>
                     {title}
                 </Typography>
-                <Divider/>
+                <WdDivider/>
                 <div style={{display: "flex", justifyContent: "center", padding:"20px"}}>
                     <Image src={image} alt={"image"} width={200}/>
                 </div>
-                <Typography variant="body2" sx={{color: 'text.secondary'}}>
-                    {description}
-                </Typography>
+                <WdDivider/>
+                <div style={{display: "flex", justifyContent: "right"}}>
+                    <WdIconButton><Edit/></WdIconButton>
+                    <WdIconButton><Delete/></WdIconButton>
+                </div>
             </CardActionArea>
         </Card>
     );
 }
-// <Card sx={{padding: "20px", display: "flex", justifyContent: "center"}} variant="outlined" >
-//     <CardContent>
-//         <Typography gutterBottom variant="h5" component="div">
-//             {title}
-//         </Typography>
-//         <div style={{display: "flex", justifyContent: "center"}}>
-//             <Image src={image} alt={"image"}/>
-//         </div>
-//         <Typography variant="body2" sx={{color: 'text.secondary'}}>{description}</Typography>
-//     </CardContent>
-//     <CardActions>
-//         {children}
-//     </CardActions>
-// </Card>
+WdImageCard.propTypes = {
+    image: PropTypes.object,
+    title: PropTypes.string
+
+}
+export default  WdImageCard;

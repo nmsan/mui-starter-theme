@@ -1,6 +1,7 @@
 'use client'
 import {createTheme} from "@mui/material";
-import {green, purple} from "@mui/material/colors";
+import {green, grey, purple} from "@mui/material/colors";
+import {gray} from "next/dist/lib/picocolors";
 
 export const theme = createTheme({
     palette: {
@@ -8,7 +9,7 @@ export const theme = createTheme({
             main: '#8636d6',
         },
         secondary: {
-            main: green[500],
+            main: grey[800],
         },
     },
 });
