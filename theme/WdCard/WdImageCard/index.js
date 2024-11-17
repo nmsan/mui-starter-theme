@@ -8,11 +8,12 @@ import {Delete, Edit} from "@mui/icons-material";
 import WdIconButton from "@/theme/WdIconButton";
 import WdDivider from "@/theme/WdDivider";
 
-const WdImageCard = ({image, title}) =>  {
+const WdImageCard = props =>  {
+    const {image, title, actions} = props;
     return (
         <Card variant="outlined">
             <CardActionArea>
-                <Typography gutterBottom variant="h5" component="div" align={"center"}>
+                <Typography gutterBottom variant="h5" component="div" align={"center"} sx={{marginTop: '12px'}}>
                     {title}
                 </Typography>
                 <WdDivider/>
@@ -21,8 +22,7 @@ const WdImageCard = ({image, title}) =>  {
                 </div>
                 <WdDivider/>
                 <div style={{display: "flex", justifyContent: "right"}}>
-                    <WdIconButton><Edit/></WdIconButton>
-                    <WdIconButton><Delete/></WdIconButton>
+                    {actions}
                 </div>
             </CardActionArea>
         </Card>
@@ -30,7 +30,8 @@ const WdImageCard = ({image, title}) =>  {
 }
 WdImageCard.propTypes = {
     image: PropTypes.object,
-    title: PropTypes.string
+    title: PropTypes.string,
+    actions: PropTypes.element
 
 }
 export default  WdImageCard;

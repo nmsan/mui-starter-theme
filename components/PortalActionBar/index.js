@@ -5,7 +5,7 @@ const PortalActionBar = props => {
         sx={{
             padding: "30px 0px",
             display: "flex",
-            justifyContent: "end"
+            justifyContent: "space-between"
         }}
         {...props}/>
 }

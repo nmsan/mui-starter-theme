@@ -8,7 +8,8 @@ const Business = props => {
 
     return <>
         <PortalHeader title="My Busicesses"/>
-        <PortalActionBar>
+        <PortalActionBar >
+            <span>&nbsp</span>
             <BusinessCreateButton/>
         </PortalActionBar>
         <BusinessList/>
