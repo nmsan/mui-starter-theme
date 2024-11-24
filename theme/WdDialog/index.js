@@ -22,7 +22,9 @@ const WdDialog = (props) => {
             </DialogContent>
             <Divider/>
             <DialogActions>
-                {actions}
+                <div style={{padding: "2px 18px"}}>
+                    {actions}
+                </div>
             </DialogActions>
         </Dialog>
     </>

@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import {useDropzone} from "react-dropzone";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
+import {ImageSearch} from "@mui/icons-material";
 
 
 const getColor = (props) => {
@@ -45,14 +46,19 @@ const thumb = {
     display: 'inline-flex',
     borderRadius: 2,
     border: '1px solid #eaeaea',
-    marginBottom: 8,
-    marginRight: 8,
-    width: "auto",
-    height: "300px",
     padding: 4,
     boxSizing: 'border-box'
 };
-
+const DefaultThumb = {
+    display: 'inline-flex',
+    borderRadius: 2,
+    border: '1px solid #eaeaea',
+    marginBottom: 8,
+    width: "200px",
+    height: "200px",
+    padding: 4,
+    boxSizing: 'border-box'
+};
 const thumbInner = {
     display: 'flex',
     minWidth: 0,
@@ -62,7 +68,7 @@ const thumbInner = {
 const img = {
     display: 'block',
     width: 'auto',
-    height: '100%'
+    height: '200px'
 };
 const label = {
     fontFamily: "Roboto, Helvetica, Arial, sans-serif",
@@ -75,7 +81,7 @@ const label = {
     backgroundColor: "#fff",
     marginLeft: "8px",
     marginTop: "-8px",
-    color: "rgb(0 0 0 / 60%)"
+    color: "rgb(0 0 0 / 60%)",
 }
 const ImageDropZone = ({labelText, isRequired}) => {
     const [files, setFiles] = useState([]);
@@ -111,16 +117,24 @@ const ImageDropZone = ({labelText, isRequired}) => {
             </div>
         </div>
     ));
+    const defaultContent = <>
+        <div style={thumbsContainer}>
+            <div style={{display: "flex", justifyContent: "center"}}>
+                <ImageSearch sx={DefaultThumb}/>
+                <p style={{position: "absolute", display: "flex", justifyContent: "center"}}>Drag & drop some files here, <br/>or click to select files</p>
 
+            </div>
+         </div>
+    </>
     return (
         <div className="container">
-            <span style={label}>{labelText} {isRequired ? <span>*</span>: ''}</span>
+            <span style={label}>{labelText} {isRequired ? <span>*</span> : ''}</span>
             <Container {...getRootProps({isFocused, isDragAccept, isDragReject})}>
                 <input {...getInputProps()} />
                 {
                     files.length > 0
                         ? <aside style={thumbsContainer}>{thumbs}</aside>
-                        : <p>Drag & drop some files here, or click to select files</p>
+                        : defaultContent
                 }
             </Container>
 

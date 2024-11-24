@@ -1,6 +1,14 @@
 import {Grid2} from "@mui/material";
+import PropTypes from "prop-types";
 
-export default function WdGrid(props) {
+const WdGrid = (props) => {
 
-    return <Grid2 {...props}></Grid2>
+    return <Grid2 spacing={2} {...props}></Grid2>
 }
+
+WdGrid.prototype = {
+    container: PropTypes.bool,
+    spacing: PropTypes.number,
+    size: PropTypes.number,
+}
+export default WdGrid;
