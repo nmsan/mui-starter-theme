@@ -1,19 +1,19 @@
 'use client'
-import PortalHeader from "@/components/PortalHeader";
+import PortalHeader from "@/components/layout/PortalHeader";
 import {useEffect, useState} from "react";
 import {useParams, useRouter} from "next/navigation";
 import WdTextField from "../../../../../theme/WdTextField";
-import ImageDropZone from "../../../../../components/ImageDropZone";
+import ImageDropZone from "../../../../../components/tools/ImageDropZone";
 import WdGrid from "../../../../../theme/WdGrid";
 import WdInputContainer from "../../../../../theme/WdInputContainer";
 import WdSubTitle from "../../../../../theme/WdTypography/WdSubTitle";
-import TestimonialCard from "../../../../../components/Business/TestimonialCard";
+import TestimonialCard from "../../../../../components/app/Business/TestimonialCard";
 import WdStack from "../../../../../theme/WdStack";
-import {Fab} from "@mui/material";
 import {Add, Cancel, Save} from "@mui/icons-material";
 import WdActionButton from "../../../../../theme/WdActionButton";
 import WdCard from "../../../../../theme/WdCard";
-import TestimonialFormModal from "../../../../../components/Business/TestimonialFormModal";
+import TestimonialFormModal from "../../../../../components/app/Business/TestimonialFormModal";
+import WdFab from "../../../../../theme/WdFab";
 
 const BusinessManage = () => {
 
@@ -60,9 +60,9 @@ const BusinessManage = () => {
             <WdGrid size={8}>
                 <div style={{paddingBottom: "10px", display: "flex", justifyContent: "space-between"}}>
                     <WdSubTitle>Testimonials</WdSubTitle>
-                    <Fab color="primary" aria-label="add" size={"small"} onClick={() => setOpenTestimonialForm(true)}>
+                    <WdFab color="primary" aria-label="add" size={"small"} onClick={() => setOpenTestimonialForm(true)}>
                         <Add/>
-                    </Fab>
+                    </WdFab>
                 </div>
                <WdStack>
                    <TestimonialCard/>

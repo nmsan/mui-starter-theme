@@ -1,6 +1,10 @@
-import {TextField} from "@mui/material";
+import {FormControl, TextField} from "@mui/material";
 
-export default  function WdTextField(props) {
+const  WdTextField = props => {
 
-    return <TextField  fullWidth {...props} />
+    return <FormControl fullWidth><TextField  fullWidth {...props} /></FormControl>
 }
+WdTextField.propTypes = {
+
+}
+export default WdTextField;

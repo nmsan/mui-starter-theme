@@ -19,7 +19,7 @@ const WdBreadcrumbs = ({paths, current}) => {
     </Breadcrumbs>
 }
 
-WdBreadcrumbs.propType = {
+WdBreadcrumbs.propTypes = {
     paths: PropTypes.array.isRequired,
     current: PropTypes.string.isRequired
 }

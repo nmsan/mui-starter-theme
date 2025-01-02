@@ -5,7 +5,7 @@ const WdActionButton = (props) => {
     return <Button  size="large" variant="outlined" startIcon={props.icon} {...props}>{props.text}</Button>
 }
 
-WdActionButton.propType = {
+WdActionButton.propTypes = {
     icon: PropTypes.element,
     text: PropTypes.string
 }

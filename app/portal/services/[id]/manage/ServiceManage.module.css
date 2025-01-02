@@ -1,0 +1,7 @@
+.actionContainer {
+    display: flex;
+    justify-content: space-between;
+}
+.testimonialImageContainer {
+    padding: 2px;
+}

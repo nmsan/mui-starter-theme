@@ -9,11 +9,11 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import WdLogoText from "@/theme/WdTypography/WdLogoText";
-import PortalMenu from "@/components/PortalMenu";
+import PortalMenu from "@/components/layout/PortalMenu";
 import WdBox from "@/theme/WdBox";
 import WdToolbar from "@/theme/WdToolbar";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 function PortalLayout(props) {
     const {window, children} = props;
@@ -44,8 +44,8 @@ function PortalLayout(props) {
             <AppBar
                 position="fixed"
                 sx={{
-                    width: {sm: `calc(100% - ${drawerWidth}px)`},
-                    ml: {sm: `${drawerWidth}px`},
+                    width: {md: `calc(100% - ${drawerWidth}px)`},
+                    ml: {md: `${drawerWidth}px`},
                 }}
             >
                 <Toolbar sx={{display: "flex", width: "100%"}}>
@@ -54,7 +54,7 @@ function PortalLayout(props) {
                         aria-label="open drawer"
                         edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{mr: 2, display: {sm: 'none'}}}
+                        sx={{mr: 2, display: {md: 'none'}}}
                     >
                         <MenuIcon/>
                     </IconButton>
@@ -63,7 +63,7 @@ function PortalLayout(props) {
             </AppBar>
             <Box
                 component="nav"
-                sx={{width: {sm: drawerWidth}, flexShrink: {sm: 0}}}
+                sx={{width: {md: drawerWidth}, flexShrink: {md: 0}}}
                 aria-label="mailbox folders"
             >
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -77,7 +77,7 @@ function PortalLayout(props) {
                         keepMounted: true, // Better open performance on mobile.
                     }}
                     sx={{
-                        display: {xs: 'block', sm: 'none'},
+                        display: {xs: 'block', md: 'none'},
                         '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
                     }}
                 >
@@ -86,7 +86,7 @@ function PortalLayout(props) {
                 <Drawer
                     variant="permanent"
                     sx={{
-                        display: {xs: 'none', sm: 'block'},
+                        display: {xs: 'none', md: 'block'},
                         '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
                     }}
                     open
@@ -96,7 +96,7 @@ function PortalLayout(props) {
             </Box>
             <Box
                 component="main"
-                sx={{flexGrow: 1, p: 3, width: {sm: `calc(100% - ${drawerWidth}px)`}}}
+                sx={{flexGrow: 1, p: 3, width: {md: `calc(100% - ${drawerWidth}px)`}}}
             >
                 <WdToolbar/>
                 <WdBox sx={{padding: "0px 24px"}}>{children}</WdBox>
